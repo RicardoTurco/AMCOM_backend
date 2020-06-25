@@ -1,0 +1,1198 @@
+{
+	"info": {
+		"_postman_id": "7c6b81e2-416d-4847-b6b4-2bb67e53deab",
+		"name": "AmCom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "Hello",
+					"item": [
+						{
+							"name": "Hello",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/hello",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"hello"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"senhaadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/v1/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update (refresh) the Access Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTM3MDgsIm5iZiI6MTU5MDUxMzcwOCwianRpIjoiYWFjNGNkNDctNGI4My00Mzg1LTlmZjgtNjRmMzM3YzM1ZjRmIiwiZXhwIjoxNTkzMTA1NzA4LCJpZGVudGl0eSI6ImJpYW5jYSIsInR5cGUiOiJyZWZyZXNoIn0.xVNu122I37tfPUmjSAB8WLoxpPQoHzT10yL9_80VZMI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/auth/refresh",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Pessoas",
+					"item": [
+						{
+							"name": "Create Pessoa",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDY2NDQsIm5iZiI6MTU5MDY0NjY0NCwianRpIjoiNDA2NzdkOWUtNTEyNy00YmViLTg1MDQtNmUyYzFlYmIzZGM4IiwiZXhwIjoxNTkwNjQ3NTQ0LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.lJlMR1-fnWvThH9JscSKywqp9sE4MhYtEoVvCHlhlNc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\": \"Bianca Dutra dos Santos\",\n\t\"cpf\": \"07160530809\",\n\t\"datanascimento\": \"14/06/2014\",\n\t\"username\": \"bianca\",\n\t\"email\": \"bianca@gmail.com\",\n\t\"password\": \"senhabianca\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/v1/pessoas",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"pessoas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Pessoas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgxMjksIm5iZiI6MTU5MDYzODEyOSwianRpIjoiZGZiYTM5MWYtMDRkZi00ZTRiLTg0ZDAtNDQ0YmI1MmU3MTVjIiwiZXhwIjoxNTkwNjM5MDI5LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.93TwM8M3z9GImAb8N1u7BFni3MOtn3CIbAsanCGo_fc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/pessoas",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"pessoas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Pessoa by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MjE5OTUsIm5iZiI6MTU5MDUyMTk5NSwianRpIjoiM2M3YmQ0ZmQtNWIwMC00MGUxLWE2MmQtZjUwOWZlOTczYWEzIiwiZXhwIjoxNTkwNTIyODk1LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.qP4UqVLD9QrJqQE-gDEWx8bZRCZvtKlAiRHJrd5054A",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/pessoas/id/3dcecd5b-ee28-433c-801f-947b751b0e51",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"pessoas",
+										"id",
+										"3dcecd5b-ee28-433c-801f-947b751b0e51"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Pessoa by Username",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTg1NTMsIm5iZiI6MTU5MDUxODU1MywianRpIjoiNWVhMjdiMTUtYmM2Ni00MzBlLThhMmEtY2JkNTY0OWI2MTMzIiwiZXhwIjoxNTkwNTE5NDUzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.yPJmC4w1F1w_w9pOfR_H0-eq-ooZU8dyhKUobAwtNOU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/pessoas/username/ricturco",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"pessoas",
+										"username",
+										"ricturco"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Pessoa by CPF",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTg1NTMsIm5iZiI6MTU5MDUxODU1MywianRpIjoiNWVhMjdiMTUtYmM2Ni00MzBlLThhMmEtY2JkNTY0OWI2MTMzIiwiZXhwIjoxNTkwNTE5NDUzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.yPJmC4w1F1w_w9pOfR_H0-eq-ooZU8dyhKUobAwtNOU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/pessoas/cpf/11864916803",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"pessoas",
+										"cpf",
+										"11864916803"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Pessoa",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTg1NTMsIm5iZiI6MTU5MDUxODU1MywianRpIjoiNWVhMjdiMTUtYmM2Ni00MzBlLThhMmEtY2JkNTY0OWI2MTMzIiwiZXhwIjoxNTkwNTE5NDUzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.yPJmC4w1F1w_w9pOfR_H0-eq-ooZU8dyhKUobAwtNOU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\": \"Bianca Dutra dos Santos2\",\n\t\"cpf\": \"11864916801\",\n\t\"datanascimento\": \"14/06/2015\",\n\t\"username\": \"bianca2\",\n\t\"email\": \"bianca2@gmail.com\",\n\t\"password\": \"senhabianca2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/pessoas/id/0d1f8c16-5943-4790-8cfd-4cdd9eae2418",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"pessoas",
+										"id",
+										"0d1f8c16-5943-4790-8cfd-4cdd9eae2418"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Pessoa by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTg1NTMsIm5iZiI6MTU5MDUxODU1MywianRpIjoiNWVhMjdiMTUtYmM2Ni00MzBlLThhMmEtY2JkNTY0OWI2MTMzIiwiZXhwIjoxNTkwNTE5NDUzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.yPJmC4w1F1w_w9pOfR_H0-eq-ooZU8dyhKUobAwtNOU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/pessoas/id/a460f2d0-d1fd-4f89-8430-514640f4efad",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"pessoas",
+										"id",
+										"a460f2d0-d1fd-4f89-8430-514640f4efad"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "TipoContas",
+					"item": [
+						{
+							"name": "Create Tipo Conta",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1NDcxMzMsIm5iZiI6MTU5MDU0NzEzMywianRpIjoiN2U3M2E3ZTMtNDU0NS00ZDVlLTg0ZjEtOWNkYmFhMGE1MTI2IiwiZXhwIjoxNTkwNTQ4MDMzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.2kRz0qioFPiHecXMgYDjkKuwHLKI6msTW2Mdn2q87X8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"tipoconta\": \"Universitaria\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-contas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Tipo Contas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgxMjksIm5iZiI6MTU5MDYzODEyOSwianRpIjoiZGZiYTM5MWYtMDRkZi00ZTRiLTg0ZDAtNDQ0YmI1MmU3MTVjIiwiZXhwIjoxNTkwNjM5MDI5LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.93TwM8M3z9GImAb8N1u7BFni3MOtn3CIbAsanCGo_fc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-contas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Tipo Conta by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTk2NjgsIm5iZiI6MTU5MDUxOTY2OCwianRpIjoiZWQ4MDc1NmYtZGIyYi00NDcyLWJkZWUtOWI1MzY1ZTcxNzcyIiwiZXhwIjoxNTkwNTIwNTY4LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.rEsgJswyvvNJjGwCEWetr-8xx1o9HDuxScBp8_4zwdQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas/id/1249adb7-0f54-4012-b563-1328e0c841d6",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-contas",
+										"id",
+										"1249adb7-0f54-4012-b563-1328e0c841d6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Tipo Conta by Nome",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTk2NjgsIm5iZiI6MTU5MDUxOTY2OCwianRpIjoiZWQ4MDc1NmYtZGIyYi00NDcyLWJkZWUtOWI1MzY1ZTcxNzcyIiwiZXhwIjoxNTkwNTIwNTY4LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.rEsgJswyvvNJjGwCEWetr-8xx1o9HDuxScBp8_4zwdQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas/nome/Conta Corrente",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-contas",
+										"nome",
+										"Conta Corrente"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Tipo Conta",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1NDcxMzMsIm5iZiI6MTU5MDU0NzEzMywianRpIjoiN2U3M2E3ZTMtNDU0NS00ZDVlLTg0ZjEtOWNkYmFhMGE1MTI2IiwiZXhwIjoxNTkwNTQ4MDMzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.2kRz0qioFPiHecXMgYDjkKuwHLKI6msTW2Mdn2q87X8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"tipoconta\": \"Poupanca\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas/id/8ee4b4a2-b6e8-4026-b938-f5b6af237dfd",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-contas",
+										"id",
+										"8ee4b4a2-b6e8-4026-b938-f5b6af237dfd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Tipo Conta",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MjA5NjcsIm5iZiI6MTU5MDUyMDk2NywianRpIjoiZTgyZTdiNjEtYzcwZi00NGZmLTk3ZDItMDg5MzcyZTZhZmIwIiwiZXhwIjoxNTkwNTIxODY3LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.2j9cWJP5z3fnV6XkvPzf0e4cEoQxkYcxdn_B_gSvj8g",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas/id/2392f40e-b60c-4f80-a6d5-3c93020182b7",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-contas",
+										"id",
+										"2392f40e-b60c-4f80-a6d5-3c93020182b7"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "TipoTransacoes",
+					"item": [
+						{
+							"name": "Create Tipo Transacao",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MzI1NDQsIm5iZiI6MTU5MDUzMjU0NCwianRpIjoiNGU2YTBiNDctNDllMy00YmY4LWI1NDctNjUxM2Q1NDM0OTJiIiwiZXhwIjoxNTkwNTMzNDQ0LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.T7lOpkgx2G4qPxaWXU7BzTeVLZUm2huNw8iC19tLrqo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"tipotransacao\": \"TESTE\",\n\t\"operacao\": \"D\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/v1/tipo-transacoes",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-transacoes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Tipo Transacoes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDA4OTQsIm5iZiI6MTU5MDY0MDg5NCwianRpIjoiN2RkMjBjNzEtMDk2Ni00MDIxLTkwOWItNzI4MzZiYzUwMTIzIiwiZXhwIjoxNTkwNjQxNzk0LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.liGlpTe8KnlbBvBXwTBNYo5NLH9e0v1XZ31HWRBOh1k",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/tipo-transacoes",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-transacoes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Tipo Transacao by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MzM5MDQsIm5iZiI6MTU5MDUzMzkwNCwianRpIjoiZDk5OTJlMmItNjY3NS00YmFiLTkxNzktMzU3MzM4YTY3Nzc3IiwiZXhwIjoxNTkwNTM0ODA0LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.jmLikcumCjIAXFlX7p2Fm5r-JGUi3-0XcxzJTzwahnw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/tipo-transacoes/id/94cedae4-3513-4b92-b69b-a9c1040cd9b8",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-transacoes",
+										"id",
+										"94cedae4-3513-4b92-b69b-a9c1040cd9b8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Tipo Transacao by Nome",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MzQ0NjEsIm5iZiI6MTU5MDUzNDQ2MSwianRpIjoiYWRhM2M1MGUtMTFkZC00MjdlLWJlNzUtN2YwYTVlOGZkMzNiIiwiZXhwIjoxNTkwNTM1MzYxLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.T1BaduZaDuWQ5IQUy2CQS1eIqbHNtl924ZkUmdEkhD4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/tipo-transacoes/nome/Deposito",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-transacoes",
+										"nome",
+										"Deposito"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Tipo Transacao by Operacao",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1Mzk3OTEsIm5iZiI6MTU5MDUzOTc5MSwianRpIjoiNGFjZjI1ZTUtNWNkZS00NjdmLWI2ZWYtOTVmZTM3ODFkMzE0IiwiZXhwIjoxNTkwNTQwNjkxLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.KcQ9CUeMYp-V9fAIIui6jnnFcqmmDjBzBQ0TFxHJA2g",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/tipo-transacoes/operacao/D",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-transacoes",
+										"operacao",
+										"D"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Tipo Transacao",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1Mzk3OTEsIm5iZiI6MTU5MDUzOTc5MSwianRpIjoiNGFjZjI1ZTUtNWNkZS00NjdmLWI2ZWYtOTVmZTM3ODFkMzE0IiwiZXhwIjoxNTkwNTQwNjkxLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.KcQ9CUeMYp-V9fAIIui6jnnFcqmmDjBzBQ0TFxHJA2g",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"tipotransacao\": \"TESTE22\",\n\t\"operacao\": \"D\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/v1/tipo-transacoes/id/a8f6dc8c-ada3-4f18-b430-8693b469d913",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-transacoes",
+										"id",
+										"a8f6dc8c-ada3-4f18-b430-8693b469d913"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Tipo Transacao",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1NDA3MjgsIm5iZiI6MTU5MDU0MDcyOCwianRpIjoiMWIwYzM5NzYtY2JhNy00ZWZlLWI4MjQtYzNiOTk0Y2MyZDJmIiwiZXhwIjoxNTkwNTQxNjI4LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.5zbb2qAC5STK4pqV6dgChF5Lo1HiePZPJ_MZRCut5HE",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/tipo-transacoes/id/83a8ecc4-eefe-4664-b3d3-11e61262f545",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"tipo-transacoes",
+										"id",
+										"83a8ecc4-eefe-4664-b3d3-11e61262f545"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Contas",
+					"item": [
+						{
+							"name": "Create Conta",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"idpessoa\": \"17b8f12d-0050-400c-941d-6263d77b5720\",\n\t\"limitesaquediario\": 521.00,\n\t\"idtipoconta\": \"e0435009-46b9-4ed9-bfc0-b537ce2aa226\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/v1/contas",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Contas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDMyODcsIm5iZiI6MTU5MDY0MzI4NywianRpIjoiNDUzNDAwYjYtNmVjOS00ZDExLThkNTAtMzU4ZDIzNTMwMTdjIiwiZXhwIjoxNTkwNjQ0MTg3LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zw7W_YAZowcN4K1Gf3gv1lIsMQzzkR4OvSrC_s10Di8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/contas",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Conta by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/contas/id/9ac77573-0797-49d1-9c35-de9594ca07e8",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas",
+										"id",
+										"9ac77573-0797-49d1-9c35-de9594ca07e8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Contas of Pessoa (idpessoa)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/contas/idpessoa/17b8f12d-0050-400c-941d-6263d77b5720",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas",
+										"idpessoa",
+										"17b8f12d-0050-400c-941d-6263d77b5720"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Contas inactive",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/contas/inactive-accounts",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas",
+										"inactive-accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Contas active",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/contas/active-accounts",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas",
+										"active-accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Inactivate Conta by ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/contas/id/9ac77573-0797-49d1-9c35-de9594ca07e8/inactivate",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas",
+										"id",
+										"9ac77573-0797-49d1-9c35-de9594ca07e8",
+										"inactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Active Conta by ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/contas/id/9ac77573-0797-49d1-9c35-de9594ca07e8/activate",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas",
+										"id",
+										"9ac77573-0797-49d1-9c35-de9594ca07e8",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Conta by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/contas/id/9ac77573-0797-49d1-9c35-de9594ca07e8",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"contas",
+										"id",
+										"9ac77573-0797-49d1-9c35-de9594ca07e8"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Transacoes",
+					"item": [
+						{
+							"name": "Create Transacao",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDMyODcsIm5iZiI6MTU5MDY0MzI4NywianRpIjoiNDUzNDAwYjYtNmVjOS00ZDExLThkNTAtMzU4ZDIzNTMwMTdjIiwiZXhwIjoxNTkwNjQ0MTg3LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zw7W_YAZowcN4K1Gf3gv1lIsMQzzkR4OvSrC_s10Di8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"idconta\": \"a97115f6-fe41-4edd-be93-3376b03031e5\",\n\t\"idtipotransacao\": \"18b8a8ce-b867-44fe-b9c1-fb5b6a23f036\",\n\t\"valor\": 5.0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/v1/transacoes",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"transacoes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Transacoes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDMyODcsIm5iZiI6MTU5MDY0MzI4NywianRpIjoiNDUzNDAwYjYtNmVjOS00ZDExLThkNTAtMzU4ZDIzNTMwMTdjIiwiZXhwIjoxNTkwNjQ0MTg3LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zw7W_YAZowcN4K1Gf3gv1lIsMQzzkR4OvSrC_s10Di8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/transacoes",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"transacoes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transacao by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDI3NzMsIm5iZiI6MTU5MDY0Mjc3MywianRpIjoiMzJhZWEyYjAtN2Y1OS00YjE0LWExYWItNDQ0ZmI0ZDBjOWQxIiwiZXhwIjoxNTkwNjQzNjczLCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.sNUDYMNCDwCuywH9veriuPhghx0EDRvzpd6eoEDtRa0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/transacoes/id/2afdda7f-19cb-4306-8322-5854838e1ac3",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"transacoes",
+										"id",
+										"2afdda7f-19cb-4306-8322-5854838e1ac3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Transacoes of Conta",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDMyODcsIm5iZiI6MTU5MDY0MzI4NywianRpIjoiNDUzNDAwYjYtNmVjOS00ZDExLThkNTAtMzU4ZDIzNTMwMTdjIiwiZXhwIjoxNTkwNjQ0MTg3LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zw7W_YAZowcN4K1Gf3gv1lIsMQzzkR4OvSrC_s10Di8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/transacoes/conta/a97115f6-fe41-4edd-be93-3376b03031e5",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"transacoes",
+										"conta",
+										"a97115f6-fe41-4edd-be93-3376b03031e5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Transacao",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDMyODcsIm5iZiI6MTU5MDY0MzI4NywianRpIjoiNDUzNDAwYjYtNmVjOS00ZDExLThkNTAtMzU4ZDIzNTMwMTdjIiwiZXhwIjoxNTkwNjQ0MTg3LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zw7W_YAZowcN4K1Gf3gv1lIsMQzzkR4OvSrC_s10Di8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/v1/transacoes/id/fdbb9f03-d72c-469b-b879-b41d4bec9ada",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"transacoes",
+										"id",
+										"fdbb9f03-d72c-469b-b879-b41d4bec9ada"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
