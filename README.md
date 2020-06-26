@@ -1,6 +1,5 @@
-# [DOCK] Selection challenge
-This project is the "challenge" for a developer position in the company [Dock].  
-(The instructions for this challenge are in readme_dock.md file)
+# [AMCOM] Backend API
+This project is the API for AMCOM.  
 
 ## Deploy
 
@@ -8,7 +7,7 @@ The API was deployed on Heroku:
 
 ```
 URL of Swagger on Heroku: 
-https://dockapi.herokuapp.com/api/v1/docs
+https://amcomapi.herokuapp.com/api/v1/docs
 ```
 
 ## BD - Firebase
@@ -40,10 +39,7 @@ After the application goes up, open your browser on `localhost:5000/api/v1/docs`
 ## Basic WorkFlow
 
 ```   
-- Import Test_Dock.postman_collection.json in Postman to access the URLs and payloads;
-- A User's "access_token" must be informed in the HEADER of requests;
-- When "access_token" expires, you must use the "refresh_token" in HEADER of URL 
-(POST > localhost:5000/api/v1/auth/refresh) to update a user's "access_token";
+- Import AmCom.postman_collection.json in Postman to access the URLs and payloads;
 
 
 a) Login using the username "admin" and password "senhaadmin" to get ACCESS_TOKEN;
@@ -136,7 +132,7 @@ The project structure is based on the official [Scaling your project](https://fl
 ├── requirements.txt
 ├── run.py
 ├── runtime.txt
-├── Test_Dock.postman_collection.json
+├── AmCom.postman_collection.json
 
 ```
 
@@ -161,7 +157,7 @@ The project structure is based on the official [Scaling your project](https://fl
 * `requirements.txt` - All project dependencies.
 * `run.py` - The Application entrypoint.
 * `runtime.py` - Set version of Python for deploy on Heroku.
-* `Test_Dock.postman_collection.json` - File to import in Postman.
+* `AmCom.postman_collection.json` - File to import in Postman.
 
 ### API Versioning
 
