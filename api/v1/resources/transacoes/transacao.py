@@ -58,6 +58,22 @@ class TransacaoConta(Resource):
             api.abort(404, 'Transacao not found')
         return transacoes
 
+    @api.doc(responses={
+        200: 'OK',
+        401: 'Unauthorized',
+        404: 'Transacao not found',
+        500: 'Internal Server Error'
+    }, params={'idconta': 'Conta ID'})
+    def delete(self, idconta):
+        """
+        Delete all transacoes of conta
+        """
+        transacoes = Transacoes.get_all_transacoes_conta(idconta)
+        if not transacoes:
+            api.abort(303, 'Transacao not found')
+        Transacoes.delete_transacoes_conta(transacoes)
+        return {'msg': 'All Transacoes of Conta deleted.'}
+
 
 @api.route('/id/<string:id>')
 class TransacaoId(Resource):

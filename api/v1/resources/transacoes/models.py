@@ -20,6 +20,17 @@ def date_in(date):
     return date_f
 
 
+def delete_transacao(transacao):
+    transacoes_ref = set_transacoes()
+
+    transacoes_ref.document(transacao['idtransacao']).delete()
+
+    update_saldo_conta(transacao['idconta'],
+                       transacao['idtipotransacao'],
+                       transacao['valor'],
+                       'D')
+
+
 def put_fields_missing(transacao_dict):
 
     tipo_transacao = TipoTransacoes.get_tipo_transacao(transacao_dict['idtipotransacao'])
@@ -133,12 +144,10 @@ class Transacoes:
             return f"An Error Occured: {e}"
 
     @staticmethod
+    def delete_transacoes_conta(transacoes):
+        for item in range(len(transacoes)):
+            delete_transacao(transacoes[item])
+
+    @staticmethod
     def delete_transacao(transacao):
-        transacoes_ref = set_transacoes()
-
-        transacoes_ref.document(transacao['idtransacao']).delete()
-
-        update_saldo_conta(transacao['idconta'],
-                           transacao['idtipotransacao'],
-                           transacao['valor'],
-                           'D')
+        delete_transacao(transacao)
