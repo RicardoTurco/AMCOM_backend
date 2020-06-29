@@ -1,5 +1,4 @@
 from flask_restplus import Resource, Namespace
-from flask_jwt_extended  import jwt_required
 from .serializers import transacao_op, create_transacao
 from .models import Transacoes
 
@@ -15,7 +14,6 @@ class TransacaoList(Resource):
         200: 'OK',
         401: 'Unauthorized',
         500: 'Internal Server Error'})
-    # @jwt_required
     def get(self):
         """
         Get all transacoes
@@ -29,7 +27,6 @@ class TransacaoList(Resource):
         401: 'Inauthorized',
         422: 'Cannot create transacao',
         500: 'Internal Server Error'})
-    # @jwt_required
     def post(self):
         """
         Creates a new transacao
@@ -48,7 +45,6 @@ class TransacaoConta(Resource):
         404: 'Transacao not found',
         500: 'Internal Server Error'
     }, params={'idconta': 'Conta ID'})
-    # @jwt_required
     def get(self, idconta):
         """
         Get all transacoes of conta
@@ -85,7 +81,6 @@ class TransacaoId(Resource):
         404: 'Transacao not found',
         500: 'Internal Server Error'
     }, params={'id': 'Transacao ID'})
-    # @jwt_required
     def get(self, id):
         """
         Get transacao by ID
@@ -101,7 +96,6 @@ class TransacaoId(Resource):
         404: 'Transacao not found',
         500: 'Internal Server Error'
     }, params={'id': 'Transacao ID'})
-    # @jwt_required
     def delete(self, id):
         """
         Delete transacao by ID

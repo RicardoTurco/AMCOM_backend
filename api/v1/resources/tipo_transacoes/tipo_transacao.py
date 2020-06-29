@@ -1,5 +1,4 @@
 from flask_restplus import Resource, Namespace
-from flask_jwt_extended import jwt_required
 from .serializers import tipo_transacao, create_tipo_transacao
 from .models import TipoTransacoes
 
@@ -15,7 +14,6 @@ class TipoTransacaoList(Resource):
         200: 'OK',
         401: 'Unauthorized',
         500: 'Internal Server Error'})
-    # @jwt_required
     def get(self):
         """
         Get all tipo transacoes
@@ -30,7 +28,6 @@ class TipoTransacaoList(Resource):
         409: 'Tipo Transacao already exists',
         422: 'Cannot create tipo transacao',
         500: 'Internal Server Error'})
-    # @jwt_required
     def post(self):
         """
         Creates a new tipo transacao
@@ -53,7 +50,6 @@ class TipoTransacaoOperacao(Resource):
         404: 'Tipo Transacao not found',
         500: 'Internal Server Error'
     }, params={'operacao': 'Operacao Tipo Transacao'})
-    # @jwt_required
     def get(self, operacao):
         """
         Get tipo transacao by Operacao
@@ -74,7 +70,6 @@ class TipoTransacaoNome(Resource):
         404: 'Tipo Transacao not found',
         500: 'Internal Server Error'
     }, params={'nome': 'Nome Tipo Transacao'})
-    # @jwt_required
     def get(self, nome):
         """
         Get tipo transacao by Nome
@@ -95,7 +90,6 @@ class TipoContaId(Resource):
         404: 'Tipo Transacao not found',
         500: 'Internal Server Error'
     }, params={'id': 'Tipo Transacao ID'})
-    # @jwt_required
     def get(self, id):
         """
         Get tipo transacao by ID
@@ -111,7 +105,6 @@ class TipoContaId(Resource):
         404: 'Tipo Transacao not found',
         500: 'Internal Server Error'
     }, params={'id': 'Tipo Transacao ID'})
-    # @jwt_required
     def delete(self, id):
         """
         Delete tipo transacao by ID
@@ -132,7 +125,6 @@ class TipoContaId(Resource):
         422: 'No tipo transacao updated',
         500: 'Internal Server Error'
     }, params={'id': 'Tipo Transacao ID'})
-    # @jwt_required
     def put(self, id):
         """
         Updates the tipo transacao

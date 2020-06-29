@@ -22,7 +22,7 @@ The connection keys are in the KEYS.JSON file.
 To install and execution the API in your local machine, you will need to:
 
 ```
-git clone https://github.com/RicardoTurco/desafio-dev-api-rest.git && cd desafio-dev-api-rest
+git clone https://github.com/RicardoTurco/AMCOM_backend.git && cd AMCOM_backend
 
 Create and activate one "virtualenv"
 (using any valid form) 
@@ -42,32 +42,25 @@ After the application goes up, open your browser on `localhost:5000/api/v1/docs`
 - Import AmCom.postman_collection.json in Postman to access the URLs and payloads;
 
 
-a) Login using the username "admin" and password "senhaadmin" to get ACCESS_TOKEN;
-(This is the only URL that is not required to provide an "access_token")
-(POST > localhost:5000/api/v1/auth/login)
-
-b) Criar um USER usando o "access_token" do ADMIN;
+a) Criar um USER;
 (POST > http://127.0.0.1:5000/api/v1/pessoas)
 
-c) Realizar o LOGIN utilizando o "username" e o "password" o USER criado, para acessar o ACCESS_TOKEN
-(POST > http://127.0.0.1:5000/api/v1/auth/login)
-
-d) List ALL Pessoas;
+b) List ALL Pessoas;
 (GET > http://127.0.0.1:5000/api/v1/pessoas)
 
-e) List ALL tipos de Contas;
+c) List ALL tipos de Contas;
 (GET > http://127.0.0.1:5000/api/v1/tipo-contas)
 
-f) Create CONTA to Pessoa;
+d) Create CONTA to Pessoa;
 (POST > http://127.0.0.1:5000/api/v1/contas)
 
-g) List ALL Contas;
+e) List ALL Contas;
 (GET > http://127.0.0.1:5000/api/v1/contas)
 
-h) List ALL tipo de Transacoes;
+f) List ALL tipo de Transacoes;
 (GET > http://127.0.0.1:5000/api/v1/tipo-transacoes)
 
-i) Create TRANSACAO;
+g) Create TRANSACAO;
 (POST > http://127.0.0.1:5000/api/v1/transacoes)
 ```
 
@@ -124,15 +117,14 @@ The project structure is based on the official [Scaling your project](https://fl
 ├── imgs
 │   ├── images files
 ├── .gitignore
+├── AmCom.postman_collection.json
 ├── config.py
 ├── keys.json
 ├── Procfile
 ├── README.md
-├── readme_dock.md
 ├── requirements.txt
 ├── run.py
 ├── runtime.txt
-├── AmCom.postman_collection.json
 
 ```
 
@@ -149,15 +141,14 @@ The project structure is based on the official [Scaling your project](https://fl
 * `api/__init__.py` - The Flask Application factory (`create_app()`) and it's configuration are done here. Your [Blueprints](https://flask-restplus.readthedocs.io/en/stable/scaling.html#use-with-blueprints) are registered here.
 * `api/v1/__init__.py` - The Flask RESTPlus API is created here with the versioned Blueprint (e.g `v1`). Your [Namespaces](https://flask-restplus.readthedocs.io/en/stable/scaling.html#multiple-namespaces) are registered here.
 * `.gitignore` - Lists files and directories which should not be added to git repository.
+* `AmCom.postman_collection.json` - File to import in Postman.
 * `config.py` - Config file for envs, global config vars and so on.
 * `keys.json` - Keys for access for Firebase DB.
 * `Procfile` - Configuration of gunicorn (for deploy on Heroku).
 * `README.md` - Instructions and informations of this "challenge".
-* `readme_dock.md` - Instructions how to execute of this "challenge.
 * `requirements.txt` - All project dependencies.
 * `run.py` - The Application entrypoint.
 * `runtime.py` - Set version of Python for deploy on Heroku.
-* `AmCom.postman_collection.json` - File to import in Postman.
 
 ### API Versioning
 

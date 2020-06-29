@@ -1,5 +1,4 @@
 from flask_restplus import Resource, Namespace
-from flask_jwt_extended import jwt_required
 from .serializers import conta_all, create_conta
 from .models import Contas, exist_conta
 
@@ -15,7 +14,6 @@ class ContaList(Resource):
         200: 'OK',
         401: 'Unauthorized',
         500: 'Internal Server Error'})
-    # @jwt_required
     def get(self):
         """
         Get all contas
@@ -30,7 +28,6 @@ class ContaList(Resource):
         409: 'Conta already exists',
         422: 'Cannot create conta',
         500: 'Internal Server Error'})
-    # @jwt_required
     def post(self):
         """
         Creates a new conta
@@ -52,7 +49,6 @@ class ActiveAccounts(Resource):
         401: 'Unauthorized',
         404: 'Contas not found',
         500: 'Internal Server Error'})
-    # @jwt_required
     def get(self):
         """
         Get all contas active
@@ -72,7 +68,6 @@ class ActiveAccounts(Resource):
         401: 'Unauthorized',
         404: 'Contas not found',
         500: 'Internal Server Error'})
-    # @jwt_required
     def get(self):
         """
         Get all contas inactive
@@ -93,7 +88,6 @@ class ContaUsername(Resource):
         404: 'Conta not found',
         500: 'Internal Server Error'
     }, params={'username': 'Pessoa Username'})
-    # @jwt_required
     def get(self, idpessoa):
         """
         Get all contas of Pessoa(idpessoa)
@@ -114,7 +108,6 @@ class ContaId(Resource):
         404: 'Conta not found',
         500: 'Internal Server Error'
     }, params={'id': 'Conta ID'})
-    # @jwt_required
     def get(self, id):
         """
         Get conta by ID
@@ -130,7 +123,6 @@ class ContaId(Resource):
         404: 'Conta not found',
         500: 'Internal Server Error'
     }, params={'id': 'Pessoa ID'})
-    # @jwt_required
     def delete(self, id):
         """
         Delete conta by ID
@@ -152,7 +144,6 @@ class ContaIdInactivate(Resource):
         404: 'Conta not found',
         422: 'No inactivate Conta',
         500: 'Internal Server Error'})
-    # @jwt_required
     def put(self, id):
         """
         Inactive Conta
@@ -174,7 +165,6 @@ class ContaIdActivate(Resource):
         404: 'Conta not found',
         422: 'No activate Conta',
         500: 'Internal Server Error'})
-    # @jwt_required
     def put(self, id):
         """
         Active Conta

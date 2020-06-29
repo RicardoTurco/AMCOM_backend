@@ -1,5 +1,4 @@
 from flask_restplus import Resource, Namespace
-from flask_jwt_extended import jwt_required
 from .serializers import tipo_conta, create_tipo_conta
 from .models import TipoContas
 
@@ -15,7 +14,6 @@ class TipoContaList(Resource):
         200: 'OK',
         401: 'Unauthorized',
         500: 'Internal Server Error'})
-    # @jwt_required
     def get(self):
         """
         Get all tipo contas
@@ -30,7 +28,6 @@ class TipoContaList(Resource):
         409: 'Tipo Conta already exists',
         422: 'Cannot create tipo conta',
         500: 'Internal Server Error'})
-    # @jwt_required
     def post(self):
         """
         Creates a new tipo conta
@@ -53,7 +50,6 @@ class TipoContaNome(Resource):
         404: 'Tipo Conta not found',
         500: 'Internal Server Error'
     }, params={'nome': 'Nome Tipo Conta'})
-    # @jwt_required
     def get(self, nome):
         """
         Get tipo conta by Nome
@@ -75,7 +71,6 @@ class TipoContaId(Resource):
         500: 'Internal Server Error'
     }, params={'id': 'Pessoa ID'})
     @api.doc(params={'id': 'Tipo Conta ID'})
-    # @jwt_required
     def get(self, id):
         """
         Get tipo conta by ID
@@ -91,7 +86,6 @@ class TipoContaId(Resource):
         404: 'Tipo Conta not found',
         500: 'Internal Server Error'
     }, params={'id': 'Tipo Conta ID'})
-    # @jwt_required
     def delete(self, id):
         """
         Delete tipo conta by ID
@@ -112,7 +106,6 @@ class TipoContaId(Resource):
         422: 'No tipo conta updated',
         500: 'Internal Server Error'
     }, params={'id': 'Tipo Conta ID'})
-    # @jwt_required
     def put(self, id):
         """
         Updates the tipo conta

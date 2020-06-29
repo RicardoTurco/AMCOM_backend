@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "7c6b81e2-416d-4847-b6b4-2bb67e53deab",
-		"name": "Test_Dock",
+		"_postman_id": "c2043333-c2e9-467e-aa0c-34bcd7c4913a",
+		"name": "AmCom",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -40,86 +40,16 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Auth",
-					"item": [
-						{
-							"name": "Login",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"username\": \"ricturco\",\n\t\"password\": \"senharicturco\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "localhost:5000/api/v1/auth/login",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"api",
-										"v1",
-										"auth",
-										"login"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update (refresh) the Access Token",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTM3MDgsIm5iZiI6MTU5MDUxMzcwOCwianRpIjoiYWFjNGNkNDctNGI4My00Mzg1LTlmZjgtNjRmMzM3YzM1ZjRmIiwiZXhwIjoxNTkzMTA1NzA4LCJpZGVudGl0eSI6ImJpYW5jYSIsInR5cGUiOiJyZWZyZXNoIn0.xVNu122I37tfPUmjSAB8WLoxpPQoHzT10yL9_80VZMI",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "localhost:5000/api/v1/auth/refresh",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"api",
-										"v1",
-										"auth",
-										"refresh"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
 					"name": "Pessoas",
 					"item": [
 						{
 							"name": "Create Pessoa",
 							"request": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDY2NDQsIm5iZiI6MTU5MDY0NjY0NCwianRpIjoiNDA2NzdkOWUtNTEyNy00YmViLTg1MDQtNmUyYzFlYmIzZGM4IiwiZXhwIjoxNTkwNjQ3NTQ0LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.lJlMR1-fnWvThH9JscSKywqp9sE4MhYtEoVvCHlhlNc",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"nome\": \"Ricardo Roberto dos Santos\",\n\t\"cpf\": \"41518005810\",\n\t\"datanascimento\": \"14/06/1974\",\n\t\"username\": \"ricturco\",\n\t\"email\": \"ricturco@gmail.com\",\n\t\"password\": \"senharicturco\"\n}",
+									"raw": "{\n\t\"nome\": \"Joice Denise Dutra\",\n\t\"cpf\": \"99999999999\",\n\t\"datanascimento\": \"05/02/1983\",\n\t\"username\": \"joice\",\n\t\"email\": \"joice@gmail.com\",\n\t\"password\": \"senhajoice\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -145,13 +75,7 @@
 							"name": "Get all Pessoas",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTI1MDc5MzUsIm5iZiI6MTU5MjUwNzkzNSwianRpIjoiYmVhNTdjYzAtY2QxYS00M2Y3LTg2YWItYTAzNjA0ZDJmMzJiIiwiZXhwIjoxNTkyNTk0MzM1LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.YlytESSbWwu0GtXSmwMpYgIek4pgr_yt9OxBY-OcCnQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/pessoas",
 									"protocol": "http",
@@ -175,13 +99,7 @@
 							"name": "Get Pessoa by ID",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MjE5OTUsIm5iZiI6MTU5MDUyMTk5NSwianRpIjoiM2M3YmQ0ZmQtNWIwMC00MGUxLWE2MmQtZjUwOWZlOTczYWEzIiwiZXhwIjoxNTkwNTIyODk1LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.qP4UqVLD9QrJqQE-gDEWx8bZRCZvtKlAiRHJrd5054A",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/pessoas/id/3dcecd5b-ee28-433c-801f-947b751b0e51",
 									"protocol": "http",
@@ -207,13 +125,7 @@
 							"name": "Get Pessoa by Username",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTg1NTMsIm5iZiI6MTU5MDUxODU1MywianRpIjoiNWVhMjdiMTUtYmM2Ni00MzBlLThhMmEtY2JkNTY0OWI2MTMzIiwiZXhwIjoxNTkwNTE5NDUzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.yPJmC4w1F1w_w9pOfR_H0-eq-ooZU8dyhKUobAwtNOU",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/pessoas/username/ricturco",
 									"protocol": "http",
@@ -239,13 +151,7 @@
 							"name": "Get Pessoa by CPF",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTg1NTMsIm5iZiI6MTU5MDUxODU1MywianRpIjoiNWVhMjdiMTUtYmM2Ni00MzBlLThhMmEtY2JkNTY0OWI2MTMzIiwiZXhwIjoxNTkwNTE5NDUzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.yPJmC4w1F1w_w9pOfR_H0-eq-ooZU8dyhKUobAwtNOU",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/pessoas/cpf/11864916803",
 									"protocol": "http",
@@ -271,13 +177,7 @@
 							"name": "Update Pessoa",
 							"request": {
 								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTg1NTMsIm5iZiI6MTU5MDUxODU1MywianRpIjoiNWVhMjdiMTUtYmM2Ni00MzBlLThhMmEtY2JkNTY0OWI2MTMzIiwiZXhwIjoxNTkwNTE5NDUzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.yPJmC4w1F1w_w9pOfR_H0-eq-ooZU8dyhKUobAwtNOU",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\t\"nome\": \"Bianca Dutra dos Santos2\",\n\t\"cpf\": \"11864916801\",\n\t\"datanascimento\": \"14/06/2015\",\n\t\"username\": \"bianca2\",\n\t\"email\": \"bianca2@gmail.com\",\n\t\"password\": \"senhabianca2\"\n}",
@@ -312,13 +212,7 @@
 							"name": "Delete Pessoa by ID",
 							"request": {
 								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTg1NTMsIm5iZiI6MTU5MDUxODU1MywianRpIjoiNWVhMjdiMTUtYmM2Ni00MzBlLThhMmEtY2JkNTY0OWI2MTMzIiwiZXhwIjoxNTkwNTE5NDUzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.yPJmC4w1F1w_w9pOfR_H0-eq-ooZU8dyhKUobAwtNOU",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/pessoas/id/a460f2d0-d1fd-4f89-8430-514640f4efad",
 									"protocol": "http",
@@ -351,16 +245,10 @@
 							"name": "Create Tipo Conta",
 							"request": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1NDcxMzMsIm5iZiI6MTU5MDU0NzEzMywianRpIjoiN2U3M2E3ZTMtNDU0NS00ZDVlLTg0ZjEtOWNkYmFhMGE1MTI2IiwiZXhwIjoxNTkwNTQ4MDMzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.2kRz0qioFPiHecXMgYDjkKuwHLKI6msTW2Mdn2q87X8",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"tipoconta\": \"Universitaria\"\n}",
+									"raw": "{\n\t\"tipoconta\": \"TESTE\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -390,13 +278,7 @@
 							"name": "Get all Tipo Contas",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTI1MDc5MzUsIm5iZiI6MTU5MjUwNzkzNSwianRpIjoiYmVhNTdjYzAtY2QxYS00M2Y3LTg2YWItYTAzNjA0ZDJmMzJiIiwiZXhwIjoxNTkyNTk0MzM1LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.YlytESSbWwu0GtXSmwMpYgIek4pgr_yt9OxBY-OcCnQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas",
 									"protocol": "http",
@@ -420,13 +302,7 @@
 							"name": "Get Tipo Conta by ID",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTk2NjgsIm5iZiI6MTU5MDUxOTY2OCwianRpIjoiZWQ4MDc1NmYtZGIyYi00NDcyLWJkZWUtOWI1MzY1ZTcxNzcyIiwiZXhwIjoxNTkwNTIwNTY4LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.rEsgJswyvvNJjGwCEWetr-8xx1o9HDuxScBp8_4zwdQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas/id/1249adb7-0f54-4012-b563-1328e0c841d6",
 									"protocol": "http",
@@ -452,13 +328,7 @@
 							"name": "Get Tipo Conta by Nome",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MTk2NjgsIm5iZiI6MTU5MDUxOTY2OCwianRpIjoiZWQ4MDc1NmYtZGIyYi00NDcyLWJkZWUtOWI1MzY1ZTcxNzcyIiwiZXhwIjoxNTkwNTIwNTY4LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.rEsgJswyvvNJjGwCEWetr-8xx1o9HDuxScBp8_4zwdQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas/nome/Conta Corrente",
 									"protocol": "http",
@@ -484,13 +354,7 @@
 							"name": "Update Tipo Conta",
 							"request": {
 								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1NDcxMzMsIm5iZiI6MTU5MDU0NzEzMywianRpIjoiN2U3M2E3ZTMtNDU0NS00ZDVlLTg0ZjEtOWNkYmFhMGE1MTI2IiwiZXhwIjoxNTkwNTQ4MDMzLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.2kRz0qioFPiHecXMgYDjkKuwHLKI6msTW2Mdn2q87X8",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\t\"tipoconta\": \"Poupanca\"\n}",
@@ -525,13 +389,7 @@
 							"name": "Delete Tipo Conta",
 							"request": {
 								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MjA5NjcsIm5iZiI6MTU5MDUyMDk2NywianRpIjoiZTgyZTdiNjEtYzcwZi00NGZmLTk3ZDItMDg5MzcyZTZhZmIwIiwiZXhwIjoxNTkwNTIxODY3LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.2j9cWJP5z3fnV6XkvPzf0e4cEoQxkYcxdn_B_gSvj8g",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "http://127.0.0.1:5000/api/v1/tipo-contas/id/2392f40e-b60c-4f80-a6d5-3c93020182b7",
 									"protocol": "http",
@@ -564,13 +422,7 @@
 							"name": "Create Tipo Transacao",
 							"request": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MzI1NDQsIm5iZiI6MTU5MDUzMjU0NCwianRpIjoiNGU2YTBiNDctNDllMy00YmY4LWI1NDctNjUxM2Q1NDM0OTJiIiwiZXhwIjoxNTkwNTMzNDQ0LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.T7lOpkgx2G4qPxaWXU7BzTeVLZUm2huNw8iC19tLrqo",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\t\"tipotransacao\": \"TESTE\",\n\t\"operacao\": \"D\"\n}",
@@ -599,13 +451,7 @@
 							"name": "Get all Tipo Transacoes",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTI1MDc5MzUsIm5iZiI6MTU5MjUwNzkzNSwianRpIjoiYmVhNTdjYzAtY2QxYS00M2Y3LTg2YWItYTAzNjA0ZDJmMzJiIiwiZXhwIjoxNTkyNTk0MzM1LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.YlytESSbWwu0GtXSmwMpYgIek4pgr_yt9OxBY-OcCnQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/tipo-transacoes",
 									"host": [
@@ -625,13 +471,7 @@
 							"name": "Get Tipo Transacao by ID",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MzM5MDQsIm5iZiI6MTU5MDUzMzkwNCwianRpIjoiZDk5OTJlMmItNjY3NS00YmFiLTkxNzktMzU3MzM4YTY3Nzc3IiwiZXhwIjoxNTkwNTM0ODA0LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.jmLikcumCjIAXFlX7p2Fm5r-JGUi3-0XcxzJTzwahnw",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/tipo-transacoes/id/94cedae4-3513-4b92-b69b-a9c1040cd9b8",
 									"host": [
@@ -653,13 +493,7 @@
 							"name": "Get Tipo Transacao by Nome",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1MzQ0NjEsIm5iZiI6MTU5MDUzNDQ2MSwianRpIjoiYWRhM2M1MGUtMTFkZC00MjdlLWJlNzUtN2YwYTVlOGZkMzNiIiwiZXhwIjoxNTkwNTM1MzYxLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.T1BaduZaDuWQ5IQUy2CQS1eIqbHNtl924ZkUmdEkhD4",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/tipo-transacoes/nome/Deposito",
 									"host": [
@@ -681,13 +515,7 @@
 							"name": "Get Tipo Transacao by Operacao",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1Mzk3OTEsIm5iZiI6MTU5MDUzOTc5MSwianRpIjoiNGFjZjI1ZTUtNWNkZS00NjdmLWI2ZWYtOTVmZTM3ODFkMzE0IiwiZXhwIjoxNTkwNTQwNjkxLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.KcQ9CUeMYp-V9fAIIui6jnnFcqmmDjBzBQ0TFxHJA2g",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/tipo-transacoes/operacao/D",
 									"host": [
@@ -709,13 +537,7 @@
 							"name": "Update Tipo Transacao",
 							"request": {
 								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1Mzk3OTEsIm5iZiI6MTU5MDUzOTc5MSwianRpIjoiNGFjZjI1ZTUtNWNkZS00NjdmLWI2ZWYtOTVmZTM3ODFkMzE0IiwiZXhwIjoxNTkwNTQwNjkxLCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.KcQ9CUeMYp-V9fAIIui6jnnFcqmmDjBzBQ0TFxHJA2g",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\t\"tipotransacao\": \"TESTE22\",\n\t\"operacao\": \"D\"\n}",
@@ -746,13 +568,7 @@
 							"name": "Delete Tipo Transacao",
 							"request": {
 								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA1NDA3MjgsIm5iZiI6MTU5MDU0MDcyOCwianRpIjoiMWIwYzM5NzYtY2JhNy00ZWZlLWI4MjQtYzNiOTk0Y2MyZDJmIiwiZXhwIjoxNTkwNTQxNjI4LCJpZGVudGl0eSI6ImJpYW5jYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7InByaXZpbGVnZSI6bnVsbH19.5zbb2qAC5STK4pqV6dgChF5Lo1HiePZPJ_MZRCut5HE",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/tipo-transacoes/id/83a8ecc4-eefe-4664-b3d3-11e61262f545",
 									"host": [
@@ -781,16 +597,10 @@
 							"name": "Create Conta",
 							"request": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTI1MDc5MzUsIm5iZiI6MTU5MjUwNzkzNSwianRpIjoiYmVhNTdjYzAtY2QxYS00M2Y3LTg2YWItYTAzNjA0ZDJmMzJiIiwiZXhwIjoxNTkyNTk0MzM1LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.YlytESSbWwu0GtXSmwMpYgIek4pgr_yt9OxBY-OcCnQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"idpessoa\": \"fa35413f-0888-491b-a709-3bd65208121c\",\n\t\"limitesaquediario\": 650.00,\n\t\"idtipoconta\": \"078a0b30-b3db-402e-959b-68e5b043f735\"\n}",
+									"raw": "{\n\t\"idpessoa\": \"b7d18184-f74d-4956-a1c9-8f9e514af8b1\",\n\t\"limitesaquediario\": 300.00,\n\t\"idtipoconta\": \"473cf94f-f5a5-4848-a71f-5466e20d643b\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -816,13 +626,7 @@
 							"name": "Get all Contas",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTI1MDc5MzUsIm5iZiI6MTU5MjUwNzkzNSwianRpIjoiYmVhNTdjYzAtY2QxYS00M2Y3LTg2YWItYTAzNjA0ZDJmMzJiIiwiZXhwIjoxNTkyNTk0MzM1LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.YlytESSbWwu0GtXSmwMpYgIek4pgr_yt9OxBY-OcCnQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/contas",
 									"host": [
@@ -842,13 +646,7 @@
 							"name": "Get Conta by ID",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NTQyMDAsIm5iZiI6MTU5MDY1NDIwMCwianRpIjoiNGE5YWI3OGMtNzgwMS00YWUxLTgxZjYtYWNlMjIzZmRmZDkxIiwiZXhwIjoxNTkwNjU1MTAwLCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.yEl19k4bhHWtHWcdx_LGsQ4I90eU8daDPVbDScETLYg",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/contas/id/8132a4a6-c7d9-4d0f-a731-d29e117eacd3",
 									"host": [
@@ -870,13 +668,7 @@
 							"name": "Get all Contas of Pessoa (idpessoa)",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/contas/idpessoa/17b8f12d-0050-400c-941d-6263d77b5720",
 									"host": [
@@ -898,13 +690,7 @@
 							"name": "Get all Contas inactive",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/contas/inactive-accounts",
 									"host": [
@@ -925,13 +711,7 @@
 							"name": "Get all Contas active",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/contas/active-accounts",
 									"host": [
@@ -952,13 +732,7 @@
 							"name": "Inactivate Conta by ID",
 							"request": {
 								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/contas/id/9ac77573-0797-49d1-9c35-de9594ca07e8/inactivate",
 									"host": [
@@ -981,13 +755,7 @@
 							"name": "Active Conta by ID",
 							"request": {
 								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/contas/id/9ac77573-0797-49d1-9c35-de9594ca07e8/activate",
 									"host": [
@@ -1010,13 +778,7 @@
 							"name": "Delete Conta by ID",
 							"request": {
 								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2MzgyMjIsIm5iZiI6MTU5MDYzODIyMiwianRpIjoiMzdjNzVjZDktYmExMS00ZGI2LWJmYWYtMGExMGJlNDIxYzcyIiwiZXhwIjoxNTkwNjM5MTIyLCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zRDOL2r0Pq3PrnN7aIcBjQKW_oAvYKG-dmsFZSIrB0E",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/contas/id/9ac77573-0797-49d1-9c35-de9594ca07e8",
 									"host": [
@@ -1045,13 +807,7 @@
 							"name": "Create Transacao",
 							"request": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTI1MDc5MzUsIm5iZiI6MTU5MjUwNzkzNSwianRpIjoiYmVhNTdjYzAtY2QxYS00M2Y3LTg2YWItYTAzNjA0ZDJmMzJiIiwiZXhwIjoxNTkyNTk0MzM1LCJpZGVudGl0eSI6InJpY3R1cmNvIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.YlytESSbWwu0GtXSmwMpYgIek4pgr_yt9OxBY-OcCnQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\t\"idconta\": \"c5737c2b-2071-4964-852c-99477369c3ea\",\n\t\"idtipotransacao\": \"3dd6b1b2-4921-4ce4-b36a-015c806648e1\",\n\t\"valor\": 55.0\n}",
@@ -1080,13 +836,7 @@
 							"name": "Get all Transacoes",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDMyODcsIm5iZiI6MTU5MDY0MzI4NywianRpIjoiNDUzNDAwYjYtNmVjOS00ZDExLThkNTAtMzU4ZDIzNTMwMTdjIiwiZXhwIjoxNTkwNjQ0MTg3LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zw7W_YAZowcN4K1Gf3gv1lIsMQzzkR4OvSrC_s10Di8",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/transacoes",
 									"host": [
@@ -1106,13 +856,7 @@
 							"name": "Get Transacao by ID",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDI3NzMsIm5iZiI6MTU5MDY0Mjc3MywianRpIjoiMzJhZWEyYjAtN2Y1OS00YjE0LWExYWItNDQ0ZmI0ZDBjOWQxIiwiZXhwIjoxNTkwNjQzNjczLCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.sNUDYMNCDwCuywH9veriuPhghx0EDRvzpd6eoEDtRa0",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/transacoes/id/2afdda7f-19cb-4306-8322-5854838e1ac3",
 									"host": [
@@ -1134,13 +878,7 @@
 							"name": "Get all Transacoes of Conta",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDMyODcsIm5iZiI6MTU5MDY0MzI4NywianRpIjoiNDUzNDAwYjYtNmVjOS00ZDExLThkNTAtMzU4ZDIzNTMwMTdjIiwiZXhwIjoxNTkwNjQ0MTg3LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zw7W_YAZowcN4K1Gf3gv1lIsMQzzkR4OvSrC_s10Di8",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/transacoes/conta/8132a4a6-c7d9-4d0f-a731-d29e117eacd3",
 									"host": [
@@ -1162,13 +900,7 @@
 							"name": "Delete Transacao",
 							"request": {
 								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2NDMyODcsIm5iZiI6MTU5MDY0MzI4NywianRpIjoiNDUzNDAwYjYtNmVjOS00ZDExLThkNTAtMzU4ZDIzNTMwMTdjIiwiZXhwIjoxNTkwNjQ0MTg3LCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsicHJpdmlsZWdlIjpudWxsfX0.zw7W_YAZowcN4K1Gf3gv1lIsMQzzkR4OvSrC_s10Di8",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "localhost:5000/api/v1/transacoes/id/7efafcd5-22d9-4833-812c-3ac7902d9c7c",
 									"host": [

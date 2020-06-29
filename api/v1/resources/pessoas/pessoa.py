@@ -1,5 +1,4 @@
 from flask_restplus import Resource, Namespace
-from flask_jwt_extended import jwt_required
 from .serializers import pessoa, create_pessoa
 from .models import Pessoas, exist_pessoa
 
@@ -15,7 +14,6 @@ class PessoaList(Resource):
         200: 'OK',
         401: 'Unauthorized',
         500: 'Internal Server Error'})
-    # @jwt_required
     def get(self):
         """
         Get all pessoas
@@ -30,7 +28,6 @@ class PessoaList(Resource):
         409: 'Pessoa already exists',
         422: 'Cannot create pessoa',
         500: 'Internal Server Error'})
-    # @jwt_required
     def post(self):
         """
         Creates a new pessoa
@@ -53,7 +50,6 @@ class PessoaUsername(Resource):
         404: 'Pessoa not found',
         500: 'Internal Server Error'
     }, params={'username': 'Pessoa Username'})
-    # @jwt_required
     def get(self, username):
         """
         Get pessoa by Username
@@ -75,7 +71,6 @@ class PessoaCpf(Resource):
         500: 'Internal Server Error'
     }, params={'username': 'Pessoa Username'})
     @api.doc(params={'cpf': 'Pessoa CPF'})
-    # @jwt_required
     def get(self, cpf):
         """
         Get pessoa by CPF
@@ -96,7 +91,6 @@ class PessoaId(Resource):
         404: 'Pessoa not found',
         500: 'Internal Server Error'
     }, params={'id': 'Pessoa ID'})
-    # @jwt_required
     def get(self, id):
         """
         Get pessoa by ID
@@ -112,7 +106,6 @@ class PessoaId(Resource):
         404: 'Pessoa not found',
         500: 'Internal Server Error'
     }, params={'id': 'Pessoa ID'})
-    # @jwt_required
     def delete(self, id):
         """
         Delete pessoa by ID
@@ -133,7 +126,6 @@ class PessoaId(Resource):
         422: 'No pessoa updated',
         500: 'Internal Server Error'
     }, params={'id': 'Pessoa ID'})
-    # @jwt_required
     def put(self, id):
         """
         Updates the user
